@@ -30,4 +30,4 @@ for i in range(N):
             continue
 
 # 출력
-print(width, length)
+print(width, length) 
