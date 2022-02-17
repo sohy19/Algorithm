@@ -11,8 +11,8 @@ def recruiting(i):
     return cnt
 
 t = int(input())
-n = []
-score = []
+n = []   # 테스트 케이스 수
+score = []   # 지원자의 숫자
 for i in range(t):
     n.append(int(input()))
     score.append([list(map(int, input().split())) for _ in range(n[i])])   # [서류 등수, 면접 등수]
