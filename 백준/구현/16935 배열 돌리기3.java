@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_백준_16395_배열돌리기3_엄소현_796ms {
+public class Main {
 	
 	static int n, m, r, com, len;
 	static int[][] map, resultMap;
