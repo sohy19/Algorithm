@@ -23,12 +23,12 @@ public class Main {
 		
 		code = new String[L];  // 암호 
 		Arrays.sort(candi);
-		makeCode(0, 0, 0, 0, 0);
+		makeCode(0, 0, 0, 0);
 		
 	}  // end of main
 	
 	// 암호 문자 개수, 모음 개수, 자음 개수, 중복 체크 
-	private static void makeCode(int start, int cnt, int vowel, int consonant, int flag) {
+	private static void makeCode(int start, int cnt, int vowel, int consonant) {
 		if (cnt == L) {
 			if (vowel >= 1 && consonant >= 2) {
 				for (int i = 0; i < L; i++) {
@@ -40,12 +40,11 @@ public class Main {
 		}
 		
 		for (int i = start; i < C; i++) {
-			if ((flag & 1 << i) != 0) continue;
 			code[cnt] = candi[i];
 			if (candi[i].equals("a") || candi[i].equals("e") || candi[i].equals("i") || candi[i].equals("o") || candi[i].equals("u")) {
-				makeCode(i+1, cnt+1, vowel+1, consonant, flag | 1<<i);
+				makeCode(i+1, cnt+1, vowel+1, consonant);
 			} else {
-				makeCode(i+1, cnt+1, vowel, consonant+1, flag | 1<<i);
+				makeCode(i+1, cnt+1, vowel, consonant+1);
 			}
 		}
 		
